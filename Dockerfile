@@ -1,7 +1,6 @@
 FROM golang:1.17.3-buster as builder
 WORKDIR /app
 ADD . ./httpserver
-ADD httpserver ./httpserver
 RUN go env -w GO111MODULE="on"; \
     go env -w GOPROXY="https://goproxy.io,direct"; \
     go mod vendor; \
